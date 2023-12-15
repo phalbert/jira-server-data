@@ -52,7 +52,7 @@ Follow the following steps to create a webhook:
 1. Navigate to the **Builder** section in Port and click **Data source**;
 2. Under **Webhook** tab, click **Custom integration**;
 3. In the **basic details** tab, you will be asked to provide information about your webhook such as the `title`, `identifier` `description`, and `icon`;
-4. In the **integration configuration** tab, copy and patse the [webhook configuration file](./resources/webhook_configuration.json) into the **Map the data from the external system into Port** form;
+4. In the **integration configuration** tab, copy and paste the [webhook configuration file](./resources/webhook.json) into the **Map the data from the external system into Port** form;
 5. Take note of the webhook `URL` provided by Port on this page. You will need this `URL` when subscribing to events in Jira;
 6. Test the webhook configuration mapping and click on **Save**;
 
