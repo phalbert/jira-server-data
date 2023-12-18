@@ -72,14 +72,14 @@ async def add_resource_to_port(blueprint: str, resource: dict[str, Any]) -> None
                 "url": resource["self"],
                 "status": resource["fields"]["status"]["name"],
                 "issueType": resource["fields"]["issuetype"]["name"],
-                "assignee": get_value(resource["fields"], "assignee,name"),
+                "assignee": get_field_value(resource, "assignee", "name"),
                 "reporter": resource["fields"].get("reporter", {}).get("name"),
                 "priority": resource["fields"].get("priority", {}).get("name"),
                 "creator": resource["fields"].get("creator", {}).get("name"),
             },
             "relations": {
                 "project": resource["fields"]["project"]["key"],
-                "parentIssue": get_value(resource["fields"], "parent,key"),
+                "parentIssue": get_field_value(resource, "parent", "key"),
                 "subtasks": [
                     issue.get("key")
                     for issue in resource["fields"]["subtasks"]
@@ -98,14 +98,24 @@ async def add_resource_to_port(blueprint: str, resource: dict[str, Any]) -> None
     logger.info(response.json())
 
 
-def get_value(data, keys):
-    for key in keys.split(","):
-        curr_data = data
-        for subkey in key.split("."):
-            if subkey not in curr_data:
-                return None
-            curr_data = curr_data[subkey]
-    return curr_data
+def get_field_value(resource, field_name, subfield_name=None):
+    """
+    Get the value of a field from a resource dictionary.
+
+    Parameters:
+    - resource (dict): The dictionary representing the resource.
+    - field_name (str): The name of the field to retrieve.
+    - subfield_name (str): Optional. If the field has a subfield, provide its name.
+
+    Returns:
+    - The value of the specified field or subfield, or None if not found.
+    """
+    field = resource["fields"].get(field_name)
+
+    if subfield_name:
+        return field.get(subfield_name) if field else None
+    else:
+        return field
 
 
 def jq_filter(data):
