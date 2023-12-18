@@ -1,17 +1,17 @@
 [
     {
-        "blueprint": "project",
-        "filter": ".body.eventKey == \"project_updated\"",
+        "blueprint": "jiraProject",
+        "filter": ".body.eventKey | IN(\"project_created\", \"project_updated\")",
         "entity": {
-            "identifier": ".project.key",
-            "title": ".project.name",
+            "identifier": ".body.project.key",
+            "title": ".body.project.name",
             "properties": {
                 "url": ".body.project.self"
             }
         }
     },
     {
-        "blueprint": "issue",
+        "blueprint": "jiraIssue",
         "filter": ".body.webhookEvent == \"jira:issue_updated\"",
         "entity": {
             "identifier": ".body.issue.key",

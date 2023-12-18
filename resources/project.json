@@ -1,5 +1,5 @@
 {
-    "identifier": "project",
+    "identifier": "jiraProject",
     "title": "Jira Project",
     "icon": "Jira",
     "description": "A Jira project",

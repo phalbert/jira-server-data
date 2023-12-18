@@ -54,7 +54,7 @@ jira_auth = HTTPBasicAuth(username=JIRA_USERNAME, password=JIRA_TOKEN)
 async def add_resource_to_port(blueprint: str, resource: dict[str, Any]) -> None:
     logger.info(f"Adding {blueprint} resource to Port: {resource}")
 
-    if blueprint == "project":
+    if blueprint == "jiraProject":
         entity = {
             "identifier": resource["key"],
             "title": resource["name"],
@@ -64,7 +64,7 @@ async def add_resource_to_port(blueprint: str, resource: dict[str, Any]) -> None
             },
             "relations": {},
         }
-    elif blueprint == "issue":
+    elif blueprint == "jiraIssue":
         entity = {
             "identifier": resource["key"],
             "title": resource["fields"]["summary"],
@@ -182,11 +182,11 @@ if __name__ == "__main__":
     async def main():
         async for projects in jira_client.get_projects():
             for project in projects:
-                await add_resource_to_port("project", project)
+                await add_resource_to_port("jiraProject", project)
 
         async for issues in jira_client.get_paginated_issues():
             for issue in issues:
-                await add_resource_to_port("issue", issue)
+                await add_resource_to_port("jiraIssue", issue)
 
     asyncio.run(main())
 
