@@ -1,7 +1,7 @@
 [
     {
         "blueprint": "jiraProject",
-        "filter": ".body.eventKey | IN(\"project_created\", \"project_updated\")",
+        "filter": ".body.webhookEvent | IN(\"project_created\", \"project_updated\")",
         "entity": {
             "identifier": ".body.project.key",
             "title": ".body.project.name",
