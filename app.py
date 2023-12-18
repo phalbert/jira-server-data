@@ -20,7 +20,6 @@ JIRA_API_URL = config("JIRA_API_URL")
 
 
 api_url = f"{JIRA_API_URL}/rest/api/2"
-webhooks_url = f"{api_url}/webhooks/1.0/webhook"
 
 ## Get Port Access Token
 credentials = {"clientId": PORT_CLIENT_ID, "clientSecret": PORT_CLIENT_SECRET}
