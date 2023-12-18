@@ -30,7 +30,7 @@ export JIRA_API_URL=http://localhost:8080
 
 git clone https://github.com/port-labs/jira-workspace-data.git
 
-cd jira-workspace-data
+cd jira-server-data
 
 pip install -r ./requirements.txt
 
@@ -67,8 +67,8 @@ Follow the following steps to create a webhook:
     2. `URL` - enter the value of the webhook `URL` you received after creating the webhook configuration in Port;
     3. `Description` - A useful description;
     4.  `Events` 
-        - Under **Project** select `created`, `updated`, `deleted`
-        - Under **Issue** select `created`, `updated`, `deleted`.
+        - Under **Project** select `created`, `updated`
+        - Under **Issue** select `created`, `updated`
         - Select any other event based on your case, and make the relevant changes in the code to trap them.
 6. Click **Save** to save the webhook;
 
