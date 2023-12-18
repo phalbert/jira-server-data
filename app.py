@@ -15,7 +15,7 @@ PORT_CLIENT_ID = config("PORT_CLIENT_ID")
 PORT_CLIENT_SECRET = config("PORT_CLIENT_SECRET")
 
 JIRA_USERNAME = config("JIRA_USERNAME")
-JIRA_TOKEN = config("JIRA_TOKEN")
+JIRA_PASSWORD = config("JIRA_PASSWORD")
 JIRA_API_URL = config("JIRA_API_URL")
 
 
@@ -30,7 +30,7 @@ access_token = token_response.json()["accessToken"]
 port_headers = {"Authorization": f"Bearer {access_token}"}
 
 # https://developer.atlassian.com/cloud/jira/platform/basic-auth-for-rest-apis/
-jira_auth = HTTPBasicAuth(username=JIRA_USERNAME, password=JIRA_TOKEN)
+jira_auth = HTTPBasicAuth(username=JIRA_USERNAME, password=JIRA_PASSWORD)
 
 
 # Add a resource to Port

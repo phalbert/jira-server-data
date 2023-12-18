@@ -25,10 +25,10 @@ To ingest data from your Jira Software (Server) account to Port, run the followi
 export PORT_CLIENT_ID=<ENTER CLIENT ID>
 export PORT_CLIENT_SECRET=<ENTER CLIENT SECRET>
 export JIRA_USERNAME=<ENTER JIRA USERNAME>
-export JIRA_TOKEN=<ENTER JIRA PASSWORD>
+export JIRA_PASSWORD=<ENTER JIRA PASSWORD>
 export JIRA_API_URL=http://localhost:8080
 
-git clone https://github.com/port-labs/jira-workspace-data.git
+git clone https://github.com/port-labs/jira-server-data.git
 
 cd jira-server-data
 
@@ -42,7 +42,7 @@ The list of variables required to run this script are:
 - `PORT_CLIENT_SECRET`
 - `JIRA_API_URL` - Jira server host such as `http://localhost:8080`
 - `JIRA_USERNAME` - Jira username to use when accessing the Jira Software (Server) resources
-- `JIRA_TOKEN` - Jira account password or token to use when accessing the Jira resources
+- `JIRA_PASSWORD` - Jira account password or token to use when accessing the Jira resources
 
 ## Port Webhook Configuration
 
