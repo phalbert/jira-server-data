@@ -26,8 +26,6 @@ credentials = {"clientId": PORT_CLIENT_ID, "clientSecret": PORT_CLIENT_SECRET}
 token_response = requests.post(f"{PORT_API_URL}/auth/access_token", json=credentials)
 access_token = token_response.json()["accessToken"]
 
-logger.debug(f"Access Token: {access_token}")
-
 # You can now use the value in access_token when making further requests
 port_headers = {"Authorization": f"Bearer {access_token}"}
 
