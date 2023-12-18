@@ -7,20 +7,6 @@ from loguru import logger
 from decouple import config
 
 PAGE_SIZE = 50
-WEBHOOK_NAME = "Port-Ocean-Events-Webhook"
-
-WEBHOOK_EVENTS = [
-    "jira:issue_created",
-    "jira:issue_updated",
-    "jira:issue_deleted",
-    "project_created",
-    "project_updated",
-    "project_deleted",
-    "project_soft_deleted",
-    "project_restored_deleted",
-    "project_archived",
-    "project_restored_archived",
-]
 
 # Get environment variables using the config object or os.environ["KEY"]
 # These are the credentials passed by the variables of your pipeline to your tasks and in to your env
