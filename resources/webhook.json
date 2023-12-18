@@ -12,7 +12,7 @@
     },
     {
         "blueprint": "jiraIssue",
-        "filter": ".body.webhookEvent == \"jira:issue_updated\"",
+        "filter": ".body.webhookEvent | IN(\"jira:issue_updated\", \"jira:issue_created\")",
         "entity": {
             "identifier": ".body.issue.key",
             "title": ".body.issue.fields.summary",
