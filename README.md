@@ -2,7 +2,14 @@
 
 ## Overview
 
-In this example, you'll set up blueprints for managing projects and issues in your Jira Software (Server) account. Using a Python script, you'll make API calls to JIRA REST API to retrieve information about your projects and issues. Additionally, you'll configure webhooks to keep your Port entities updated automatically whenever there's an event in your Jira Software (Server) account. For this demo, we'll focus on subscribing to updates related to projects and issues.
+This Jira server integration exports Jira resources from self-hosted Jira to Port. 
+
+In this example, 
+1. You'll set up blueprints for managing projects and issues in your Jira Software (Server) account. 
+2. Using a Python script, you'll make API calls to JIRA REST API to retrieve information about your projects and issues. 
+3. Additionally, you'll configure webhooks to keep your Port entities updated automatically whenever there's an event in your Jira Software (Server) account. 
+
+For this demo, we'll focus on subscribing to updates related to projects and issues.
 
 > **_NOTE:_**  This script is designed to operate with Jira Software Server, the self-hosted version. If you are utilizing Jira Cloud, please refer to the [Jira Ocean Integration](https://docs.getport.io/build-your-software-catalog/sync-data-to-catalog/project-management/jira) for appropriate instructions.
 
@@ -15,6 +22,12 @@ Create the project blueprint in Port [using this json file](./resources/project.
 
 ### Issue blueprint
 Create the repository blueprint in Port [using this json file](./resources/issue.json)
+
+### Port Credentials
+You will need the `PORT_CLIENT_ID` and `PORT_CLIENT_SECRET` to connect programmatically to your Port account. To get them:
+1. Navigate to the top right corner, and click on the meatballs icon (...) which is next to the user profile.
+2. Click on the **Credentials** option.
+3. Copy the *Client ID* and *Client Secret*. 
 
 
 ### Running the python script

@@ -18,7 +18,23 @@
             "issueType": {
                 "title": "Type",
                 "type": "string",
-                "description": "The type of the issue"
+                "description": "The type of the issue",
+                "enum": [
+                    "Story",
+                    "Bug",
+                    "Task",
+                    "New Feature",
+                    "Epic",
+                    "Improvement"
+                ],
+                "enumColors": {
+                    "Story": "green",
+                    "Bug": "red",
+                    "Task": "blue",
+                    "New Feature": "turquoise",
+                    "Epic": "purple",
+                    "Improvement": "yellow"
+                }
             },
             "components": {
                 "title": "Components",
