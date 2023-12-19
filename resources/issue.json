@@ -2,6 +2,7 @@
     "identifier": "jiraIssue",
     "title": "Jira Issue",
     "icon": "Jira",
+    "description": "A Jira issue blueprint",
     "schema": {
         "properties": {
             "url": {

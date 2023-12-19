@@ -14,7 +14,7 @@
             "projectType": {
                 "title": "Type",
                 "type": "string",
-                "description": "The type of the issue"
+                "description": "The type of the project"
             }
         }
     },
