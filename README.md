@@ -23,14 +23,18 @@ Create the project blueprint in Port [using this json file](./resources/project.
 ### Issue blueprint
 Create the repository blueprint in Port [using this json file](./resources/issue.json)
 
-### Port Credentials
-You will need the `PORT_CLIENT_ID` and `PORT_CLIENT_SECRET` to connect programmatically to your Port account. To get them:
-1. Navigate to the top right corner, and click on the meatballs icon (...) which is next to the user profile.
-2. Click on the **Credentials** option.
-3. Copy the *Client ID* and *Client Secret*. 
-
-
 ### Running the python script
+
+The list of variables required to run this script are:
+- `PORT_CLIENT_ID` - Your Port client id
+- `PORT_CLIENT_SECRET` - Your Port client secret
+- `JIRA_API_URL` - Jira server host such as `http://localhost:8080`
+- `JIRA_USERNAME` - Jira username to use when accessing the Jira Software (Server) resources
+- `JIRA_PASSWORD` - Jira account password or token to use when accessing the Jira resources
+
+
+> **_NOTE:_** Find your Port credentials using this [guide](https://docs.getport.io/build-your-software-catalog/sync-data-to-catalog/api/#find-your-port-credentials)
+
 
 To ingest data from your Jira Software (Server) account to Port, run the following commands: 
 
@@ -49,13 +53,6 @@ pip install -r ./requirements.txt
 
 python app.py
 ```
-
-The list of variables required to run this script are:
-- `PORT_CLIENT_ID`
-- `PORT_CLIENT_SECRET`
-- `JIRA_API_URL` - Jira server host such as `http://localhost:8080`
-- `JIRA_USERNAME` - Jira username to use when accessing the Jira Software (Server) resources
-- `JIRA_PASSWORD` - Jira account password or token to use when accessing the Jira resources
 
 ## Port Webhook Configuration
 
